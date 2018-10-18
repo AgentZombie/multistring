@@ -40,7 +40,7 @@ func (ms *MultiString) UnmarshalJSON(b []byte) error {
 func (ms MultiString) MarshalJSON() ([]byte, error) {
 	switch len(ms) {
 	case 0:
-		return nil, nil
+		return []byte(`""`), nil
 	case 1:
 		return json.Marshal(ms[0])
 	default:
